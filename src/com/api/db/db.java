@@ -26,6 +26,10 @@ public class db {
         return createStatement().executeQuery(sql);
     }
 
+    public static PreparedStatement execute(String sql) throws SQLException {
+        return getConnection().prepareCall(sql);
+    }
+
     public static int executeUpdate(String sql)throws SQLException{
         return createStatement().executeUpdate(sql);
     }
